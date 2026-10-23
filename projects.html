@@ -1,0 +1,436 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projects | AB Atienza Construction Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/projects.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div>
+        <span><i class="bi bi-telephone-fill"></i> +63 962 449 5318</span
+        ><span
+          ><i class="bi bi-envelope-fill"></i>
+          alvin.b.atienza.23@gmail.com</span
+        >
+      </div>
+      <div>
+        <span
+          ><i class="bi bi-geo-alt-fill"></i> FBP Building, Maharlika Highway,
+          Kanlurang Mayao, Lucena City</span
+        ><a href="https://www.facebook.com/ABATIENZACONSTRUCTIONSERVICES/"
+          ><i class="bi bi-facebook"></i
+        ></a>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <a href="index.html"
+        ><img src="images/ab-logo.svg" alt="AB Atienza logo"
+      /></a>
+      <div class="menu">
+        <a href="index.html">Home</a><a href="about.html">About</a
+        ><a href="services.html">Services</a
+        ><a class="active" href="projects.html">Projects</a
+        ><a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <a class="btn2" href="portal/login.html">Client Login</a>
+        <a class="btn" href="quote.html">Get a Free Quote</a>
+      </div>
+    </div>
+
+    <div class="phero" id="phero" onmousemove="moveParallax(event)">
+      <p class="crumb"><a href="index.html">Home</a> / Projects</p>
+      <h1>
+        Our work, from <span class="gold2">render</span> to
+        <span class="gold2">reality</span>.
+      </h1>
+      <p class="sub">
+        Built projects and 3D renders. Move your mouse over the photos, then
+        click any project below to open it.
+      </p>
+      <div class="pharow">
+        <img
+          class="pimg"
+          src="images/builds/1.jpg"
+          alt="Proposed two-storey residential"
+        />
+        <img
+          class="pimg"
+          src="images/builds/2.jpg"
+          alt="Proposed 4 bedroom bungalow"
+        />
+        <img
+          class="pimg"
+          src="images/builds/4.jpg"
+          alt="Proposed 2 storey commercial building"
+        />
+        <img
+          class="pimg"
+          src="images/builds/5.jpg"
+          alt="Proposed 5-unit commercial building"
+        />
+      </div>
+    </div>
+
+    <div class="section gray">
+      <div class="filters">
+        <button class="filterchip on" onclick="filterProjects('All', this)">
+          All
+        </button>
+        <button
+          class="filterchip"
+          onclick="filterProjects('Residential', this)"
+        >
+          Residential
+        </button>
+        <button class="filterchip" onclick="filterProjects('Commercial', this)">
+          Commercial
+        </button>
+        <button class="filterchip" onclick="filterProjects('Renovation', this)">
+          Renovation
+        </button>
+        <button class="filterchip" onclick="filterProjects('Resort', this)">
+          Resort
+        </button>
+      </div>
+      <div class="gallery">
+        <div
+          class="pcard"
+          data-category="Residential"
+          data-kind="Project"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/recent-projects/residential.jpg"
+            alt="Two-Story Residential Building"
+          />
+          <div class="pcover">
+            <span class="ptag">Residential</span>
+            <h3>Two-Story Residential Building</h3>
+          </div>
+          <p class="carddesc">
+            One of our recent two-story residential projects.
+          </p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Resort"
+          data-kind="Project"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/recent-projects/casamaria.jpg"
+            alt="Casa Maria Private Resort"
+          />
+          <div class="pcover">
+            <span class="ptag">Resort</span>
+            <h3>Casa Maria - Private Resort</h3>
+          </div>
+          <p class="carddesc">A private resort project from our recent work.</p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Renovation"
+          data-kind="Project"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/recent-projects/livingroom.jpg"
+            alt="Living Room Renovation"
+          />
+          <div class="pcover">
+            <span class="ptag">Renovation</span>
+            <h3>Living Room Renovation</h3>
+          </div>
+          <p class="carddesc">A living room renovation from our recent work.</p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Commercial"
+          data-kind="Project"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/recent-projects/commercial.jpg"
+            alt="Two-Story Commercial Building"
+          />
+          <div class="pcover">
+            <span class="ptag">Commercial</span>
+            <h3>Two-Story Commercial Building</h3>
+          </div>
+          <p class="carddesc">
+            One of our recent two-story commercial projects.
+          </p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Residential"
+          data-kind="Project"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/recent-projects/bungalow.jpg"
+            alt="4 Bedroom Bungalow House"
+          />
+          <div class="pcover">
+            <span class="ptag">Residential</span>
+            <h3>4 Bedroom Bungalow House</h3>
+          </div>
+          <p class="carddesc">A four-bedroom bungalow from our recent work.</p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Renovation"
+          data-kind="Project"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/recent-projects/highceiling.jpg"
+            alt="High Ceiling Renovation"
+          />
+          <div class="pcover">
+            <span class="ptag">Renovation</span>
+            <h3>High Ceiling Renovation</h3>
+          </div>
+          <p class="carddesc">
+            A high ceiling renovation from our recent work.
+          </p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Residential"
+          data-kind="Completed"
+          onclick="openProject(this)"
+        >
+          <img src="images/after.jpg" alt="Two-Storey Triplex Residential" />
+          <div class="pcover">
+            <span class="ptag">Residential</span>
+            <h3>Two-Storey Triplex Residential</h3>
+          </div>
+          <p class="carddesc">
+            This triplex started as a 3D render and now stands on site. See the
+            render-to-reality comparison further down this page.
+          </p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Residential"
+          data-kind="3D render"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/builds/1.jpg"
+            alt="Proposed Two-Storey Residential"
+          />
+          <div class="pcover">
+            <span class="ptag">Residential</span>
+            <h3>Proposed Two-Storey Residential</h3>
+          </div>
+          <p class="carddesc">
+            A 3D render of a proposed two-storey residential design, so the
+            owner can review it before construction.
+          </p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Residential"
+          data-kind="3D render"
+          onclick="openProject(this)"
+        >
+          <img src="images/builds/2.jpg" alt="Proposed 4 Bedroom Bungalow" />
+          <div class="pcover">
+            <span class="ptag">Residential</span>
+            <h3>Proposed 4 Bedroom Bungalow</h3>
+          </div>
+          <p class="carddesc">
+            A 3D render of a proposed four-bedroom bungalow.
+          </p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Renovation"
+          data-kind="3D render"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/builds/3.jpg"
+            alt="Proposed Residential Renovation Fit-Out"
+          />
+          <div class="pcover">
+            <span class="ptag">Renovation</span>
+            <h3>Proposed Residential Renovation Fit-Out</h3>
+          </div>
+          <p class="carddesc">
+            A 3D render of a proposed residential renovation and fit-out.
+          </p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Commercial"
+          data-kind="3D render"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/builds/4.jpg"
+            alt="Proposed 2 Storey Commercial Building"
+          />
+          <div class="pcover">
+            <span class="ptag">Commercial</span>
+            <h3>Proposed 2 Storey Commercial Building</h3>
+          </div>
+          <p class="carddesc">
+            A 3D render of a proposed two-storey commercial building.
+          </p>
+        </div>
+        <div
+          class="pcard"
+          data-category="Commercial"
+          data-kind="3D render"
+          onclick="openProject(this)"
+        >
+          <img
+            src="images/builds/5.jpg"
+            alt="Proposed 5-Unit Commercial Building"
+          />
+          <div class="pcover">
+            <span class="ptag">Commercial</span>
+            <h3>Proposed 5-Unit, 2 Storey Commercial Building</h3>
+          </div>
+          <p class="carddesc">
+            A 3D render of a proposed five-unit, two-storey commercial building.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section reality">
+      <div class="realitytext">
+        <p class="gold">Render to reality</p>
+        <h2 class="title">This triplex started as a 3D render.</h2>
+        <p class="sub">
+          Hover the photo to see the finished building. Every project starts
+          with a plan and a visual you approve before we build.
+        </p>
+        <a class="btn" href="services.html">See our 3D visual services</a>
+      </div>
+      <div class="realitypics">
+        <img
+          class="renderpic"
+          src="images/before.jpg"
+          alt="3D render of the triplex"
+        />
+        <img
+          class="finishedpic"
+          src="images/after.jpg"
+          alt="The finished triplex"
+        />
+        <span class="lab1">3D render</span
+        ><span class="lab2">Finished building</span>
+      </div>
+    </div>
+
+    <div class="fbband">
+      <div>
+        <h3>More projects and updates on Facebook</h3>
+        <p>We post our project updates on our Facebook page.</p>
+      </div>
+      <a
+        class="btn2"
+        href="https://www.facebook.com/ABATIENZACONSTRUCTIONSERVICES/"
+        ><i class="bi bi-facebook"></i> Visit our page</a
+      >
+    </div>
+
+    <div class="cta">
+      <div class="ctatext">
+        <h2>Something in mind?<br />Let's build it.</h2>
+        <p>Houses, renovations, plans and 3D visuals. Tell us what you need.</p>
+      </div>
+      <div class="ctabox">
+        <p class="hint2">Call or text us about your project</p>
+        <div class="ctaline">
+          <a href="tel:+639624495318">+63 962 449 5318</a
+          ><button class="copybutton" onclick="copyPhone(this)">Copy</button>
+        </div>
+        <p class="hint2">Or message us on Facebook</p>
+        <div class="ctaline">
+          <a href="https://www.facebook.com/ABATIENZACONSTRUCTIONSERVICES/"
+            >AB Atienza Construction Services</a
+          ><i class="bi bi-arrow-up-right"></i>
+        </div>
+        <a class="btn" href="quote.html">Get a Free Quote</a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="fcol">
+        <img src="images/ab-logo-footer.svg" alt="AB Atienza logo" />
+        <p>AB Atienza Construction Services. Your visions, we materialize.</p>
+      </div>
+      <div class="fcol">
+        <h3>Pages</h3>
+        <a href="index.html">Home</a><a href="about.html">About</a
+        ><a href="services.html">Services</a><a href="projects.html">Projects</a
+        ><a href="quote.html">Get a Quote</a><a href="contact.html">Contact</a
+        ><a href="portal/login.html">Client Login</a>
+      </div>
+      <div class="fcol">
+        <h3>Services</h3>
+        <a href="services.html">Design and Build</a
+        ><a href="services.html">Renovation Works</a
+        ><a href="services.html">Drafting Services</a
+        ><a href="services.html">As-Built Plans</a
+        ><a href="services.html">2D/3D Visualizations</a
+        ><a href="services.html">A3 Printing</a>
+      </div>
+      <div class="fcol">
+        <h3>Contact</h3>
+        <p>
+          <i class="bi bi-geo-alt-fill"></i> FBP Building, Maharlika Highway,
+          Kanlurang Mayao, Lucena City
+        </p>
+        <p><i class="bi bi-telephone-fill"></i> +63 962 449 5318</p>
+        <p><i class="bi bi-envelope-fill"></i> alvin.b.atienza.23@gmail.com</p>
+      </div>
+    </div>
+    <div class="copy">
+      &copy; 2026 AB Atienza Construction Services. License no: (add here)
+    </div>
+
+    <div class="viewer" id="viewer">
+      <button class="vclose" onclick="closeProject()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <button class="varrow" onclick="moveProject(-1)">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <div class="vbox">
+        <img id="vImage" src="images/builds/1.jpg" alt="Project" />
+        <div class="vtext">
+          <p class="gold" id="vTag"></p>
+          <h2 id="vTitle"></h2>
+          <p id="vDesc"></p>
+          <br /><a class="btn" href="quote.html">Request a similar project</a>
+        </div>
+      </div>
+      <button class="varrow" onclick="moveProject(1)">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+
+    <script src="js/projects.js"></script>
+  </body>
+</html>

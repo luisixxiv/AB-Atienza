@@ -1,0 +1,274 @@
+.menu a.active {
+  color: #a8821f;
+}
+.crumb {
+  margin-bottom: 18px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: var(--fs-label);
+  color: #777;
+}
+.crumb a:hover {
+  color: #a8821f;
+}
+
+.shero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 56px var(--gutter);
+  background: #f3e9cd;
+  overflow: hidden;
+}
+.sherotext {
+  width: 48%;
+}
+.shero h1 {
+  margin-bottom: 16px;
+  font-size: var(--fs-h1);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+}
+.word {
+  display: inline-block;
+  color: #a8821f;
+  animation: wordin 0.5s both;
+}
+@keyframes wordin {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sherosub {
+  margin-bottom: 22px;
+  font-size: var(--fs-lead);
+  color: #555;
+}
+.herophotos {
+  display: flex;
+  flex-direction: column;
+  width: 44%;
+}
+.herophotos img {
+  width: 85%;
+  height: 160px;
+  object-fit: cover;
+  border: 6px solid #fff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+.floatone {
+  animation: float 4s ease-in-out infinite;
+}
+.floattwo {
+  margin: 18px 0 0 15%;
+  animation: float 4s ease-in-out 1.5s infinite;
+}
+@keyframes float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.flips {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.flip {
+  width: 31%;
+  height: 310px;
+  margin: 0 3.5% 24px 0;
+  perspective: 1000px;
+}
+.flip:nth-child(3n) {
+  margin-right: 0;
+}
+.flipinner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+}
+.flip:hover .flipinner {
+  transform: rotateY(180deg);
+}
+.flipfront,
+.flipback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.flipfront {
+  background: #fff;
+  border: 1px solid #e4e2dc;
+}
+.flipfront img {
+  height: 190px;
+  object-fit: cover;
+}
+.flipinfo {
+  padding: 14px 18px;
+}
+.flipinfo i {
+  font-size: 24px;
+  color: #a8821f;
+}
+.flipinfo h3 {
+  margin-top: 2px;
+  font-size: var(--fs-h3);
+  letter-spacing: -0.5px;
+}
+.flipback {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  background: #c9a13b;
+  transform: rotateY(180deg);
+}
+.flipback h3 {
+  margin-bottom: 6px;
+  font-size: var(--fs-h3);
+  letter-spacing: -0.5px;
+}
+.flipback ul {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+  line-height: 1.7;
+}
+.flipback .btn2 {
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--fs-ui);
+}
+.flipback .btn2:hover {
+  background: #222;
+  color: #fff;
+}
+
+.trades {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.trade {
+  position: relative;
+  width: 22%;
+  margin: 0 4% 22px 0;
+  background: #fff;
+  border: 2px solid #e4e2dc;
+  cursor: pointer;
+  transition:
+    transform 0.3s,
+    border-color 0.3s;
+}
+.trade:nth-child(4n) {
+  margin-right: 0;
+}
+.trade:hover {
+  transform: translateY(-5px);
+}
+.trade img {
+  height: 120px;
+  object-fit: cover;
+}
+.tradebody {
+  padding: 12px;
+}
+.tradebody b {
+  display: block;
+  font-size: var(--fs-body);
+}
+.tradebody span {
+  font-size: var(--fs-small);
+  color: #666;
+}
+.tick {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 24px;
+  color: #c9a13b;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+.trade.on {
+  border-color: #c9a13b;
+}
+.trade.on .tick {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.faqbox {
+  display: flex;
+  justify-content: space-between;
+}
+.faqside {
+  width: 30%;
+}
+.faqlist {
+  width: 62%;
+}
+.faq {
+  border-bottom: 1px solid #ddd;
+}
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  font-size: var(--fs-lead);
+  cursor: pointer;
+}
+.question:hover b {
+  color: #a8821f;
+}
+.question span {
+  font-size: 24px;
+  color: #a8821f;
+}
+.faq p {
+  display: none;
+  padding-bottom: 16px;
+  color: #555;
+}
+
+.pickbar {
+  position: fixed;
+  left: 0;
+  bottom: -110px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px var(--gutter);
+  background: #222;
+  color: #fff;
+  transition: bottom 0.4s;
+  z-index: 30;
+}
+.pickinfo {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.pickinfo span {
+  font-size: var(--fs-ui);
+  color: #ccc;
+}

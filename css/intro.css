@@ -1,0 +1,98 @@
+/* ---------- intro: logo pieces fly in and join, then the homepage shows ---------- */
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 1000; /* above the sticky navbar (z-index 10) */
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #fff; /* the logo artwork is black on white */
+  border-bottom: 4px solid #fff; /* turns gold on exit, see below */
+  transition:
+    transform 0.8s cubic-bezier(0.76, 0, 0.24, 1),
+    border-color 0.2s ease;
+}
+/* exit: the logo fades, then the white screen lifts away like a shutter
+   with a gold edge, uncovering the homepage */
+#intro.out {
+  transform: translateY(-100%);
+  border-bottom-color: #c9a13b;
+  pointer-events: none;
+}
+#intro.out svg {
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s ease;
+}
+/* set by the small script in <head> on repeat visits */
+.no-intro #intro {
+  display: none;
+}
+/* no scrolling while the intro plays */
+.intro-on {
+  overflow: hidden;
+}
+/* hold the hero text until the intro ends, so its rise animation is seen */
+.intro-on .herotext h1 span {
+  animation-play-state: paused;
+}
+
+#intro svg {
+  width: min(36vmin, 300px);
+  height: auto;
+  overflow: visible;
+}
+
+/* Each piece starts displaced (--x, --y, --r) and flies to its home position.
+   --d is the delay, so the pieces land one after another. */
+.piece {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+}
+#intro.run .piece {
+  animation: fly 1.1s cubic-bezier(0.16, 1, 0.3, 1) var(--d) forwards;
+}
+@keyframes fly {
+  0% {
+    transform: translate(var(--x), var(--y)) rotate(var(--r)) scale(0.55);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* White pieces disappear on a white background, so the A gets a thin
+   outline while it flies. The outline fades out as it lands. */
+#intro.run .ghost {
+  stroke: #000;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  animation: ink 1.1s linear var(--d) forwards;
+}
+@keyframes ink {
+  0%,
+  40% {
+    stroke-opacity: 1;
+  }
+  100% {
+    stroke-opacity: 0;
+  }
+}
+
+/* small pulse when everything has landed */
+#intro.run svg {
+  animation: settle 0.45s ease-in-out 1.7s;
+}
+@keyframes settle {
+  50% {
+    transform: scale(1.035);
+  }
+}

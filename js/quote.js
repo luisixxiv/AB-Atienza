@@ -17,7 +17,7 @@ function getSelected() {
   var selected = [];
   for (var i = 0; i < chips.length; i++) {
     if (chips[i].className == "servicechip on") {
-      selected.push(chips[i].textContent);
+      selected.push(chips[i].textContent.trim());
     }
   }
   return selected;
@@ -40,7 +40,7 @@ function preselectServices() {
   }
   var chips = document.getElementsByClassName("servicechip");
   for (var i = 0; i < chips.length; i++) {
-    if (pickedText.indexOf(chips[i].textContent) != -1) {
+    if (pickedText.indexOf(chips[i].textContent.trim()) != -1) {
       chips[i].className = "servicechip on";
     }
   }
@@ -224,29 +224,24 @@ function sendQuote() {
     new Date().getFullYear() +
     "-" +
     (Math.floor(Math.random() * 9000) + 1000);
-  var summary =
-    reference +
-    " | " +
-    clientName +
-    " | " +
-    phone +
-    " | " +
-    email +
-    " | " +
-    getSelected().join(", ") +
-    " | " +
-    typeNames[chosenType] +
-    " | " +
-    document.getElementById("areaNumber").value +
-    " sqm | " +
-    finishNames[chosenFinish] +
-    " | " +
-    document.getElementById("location").value +
-    " | " +
-    document.getElementById("startTime").value +
-    " | " +
-    document.getElementById("notes").value;
-  localStorage.setItem("lastQuote", summary);
+  var estimate = document.getElementById("sumPrice").innerHTML;
+  if (estimate == "Choose a service" || estimate == "Enter your floor area") {
+    estimate = "Priced after review";
+  }
+  addLead({
+    ref: reference,
+    name: clientName,
+    phone: phone,
+    email: email,
+    services: getSelected().join(", "),
+    type: typeNames[chosenType],
+    area: document.getElementById("areaNumber").value,
+    finish: finishNames[chosenFinish],
+    location: document.getElementById("location").value,
+    start: document.getElementById("startTime").value,
+    notes: document.getElementById("notes").value,
+    estimate: estimate,
+  });
 
   document.getElementById("thanksName").innerHTML = clientName;
   document.getElementById("refNumber").innerHTML = reference;

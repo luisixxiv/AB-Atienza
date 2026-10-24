@@ -16,7 +16,7 @@
   --gutter: max(32px, calc((100% - 1180px) / 2));
   --section-y: 56px;
 
-  --review-w: 260px; /* review card width, used by the loop animation */
+  --review-w: 340px; /* review card width, used by the loop animation */
   --review-gap: 16px;
 }
 
@@ -539,6 +539,22 @@ input:-webkit-autofill:focus {
   height: 32px;
   margin-right: 10px;
   border-radius: 50%;
+}
+.stars {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #c9a13b;
+}
+.stars i {
+  margin-right: 2px;
+}
+.person b,
+.person span {
+  display: block;
+}
+.person span {
+  font-size: var(--fs-label);
+  color: #777;
 }
 
 .cta {

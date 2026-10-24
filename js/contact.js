@@ -94,20 +94,14 @@ function sendMessage() {
   }
 
   error.innerHTML = "";
-  localStorage.setItem(
-    "lastMessage",
-    clientName +
-      " | " +
-      phone +
-      " | " +
-      email +
-      " | " +
-      subject +
-      " | " +
-      replyWay +
-      " | " +
-      message,
-  );
+  addInbox({
+    name: clientName,
+    phone: phone,
+    email: email,
+    subject: subject,
+    reply: replyWay,
+    message: message,
+  });
 
   document.getElementById("thanksName").innerHTML = clientName;
   document.getElementById("thanksWay").innerHTML = replyWay;

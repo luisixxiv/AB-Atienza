@@ -608,3 +608,26 @@ body {
   color: #fff;
   font-size: 26px;
 }
+
+/* small message at the bottom of the screen (used by both dashboards) */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  padding: 10px 20px;
+  background: #222;
+  border-radius: 999px;
+  font-weight: 600;
+  color: #fff;
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  pointer-events: none;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+  z-index: 200;
+}
+.toast.on {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

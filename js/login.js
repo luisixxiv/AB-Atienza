@@ -1,6 +1,10 @@
-// the login for this demo: change these two lines to change the account
+// the logins for this demo: change these lines to change the accounts
+// client account (opens the client dashboard)
 var correctEmail = "client@abatienza.com";
 var correctPassword = "build2026";
+// office account (opens the admin dashboard)
+var adminEmail = "admin@abatienza.com";
+var adminPassword = "admin2026";
 
 function logIn() {
   var email = document.getElementById("loginEmail").value;
@@ -11,6 +15,9 @@ function logIn() {
   if (email == correctEmail && password == correctPassword) {
     localStorage.setItem("clientLoggedIn", "yes");
     window.location = "dashboard.html";
+  } else if (email == adminEmail && password == adminPassword) {
+    localStorage.setItem("adminLoggedIn", "yes");
+    window.location = "../admin/dashboard.html";
   } else {
     error.innerHTML = "Wrong email or password. Please try again.";
     box.className = "loginbox shake";

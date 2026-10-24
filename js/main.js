@@ -93,7 +93,6 @@ function stackEffect() {
   }
 }
 
-
 window.onscroll = stackEffect;
 
 // ---------- reviews: copy the cards so the loop never ends ----------
@@ -104,7 +103,7 @@ track1.innerHTML = track1.innerHTML + track1.innerHTML + track1.innerHTML;
 
 // ---------- copy phone number ----------
 function copyPhone(button) {
-  navigator.clipboard.writeText("63+ 962 449 5318");
+  navigator.clipboard.writeText("+63 962 449 5318");
   button.innerHTML = "Copied!";
   setTimeout(resetCopyButtons, 1500);
 }
